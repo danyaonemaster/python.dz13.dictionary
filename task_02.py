@@ -2,7 +2,7 @@ def letters(line, dict):
     if line.__contains__('?'):
         len_input = len(line.replace("?", ""))
         print(f"str len : {len_input}\n"
-              f"len even  {dict.get(len_input % 2 + 1)}")
+              f"len even : {dict.get(len_input % 2 + 1)}")
     else:
         print("? missing from line")
 
