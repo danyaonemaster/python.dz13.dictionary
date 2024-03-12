@@ -1,9 +1,7 @@
 import random
 
-cube_1 = str(random.randint(1, 6))
-cube_2 = str(random.randint(1, 6))
-cube_3 = str(random.randint(1, 6))
+list_cube = [str(random.randint(1, 6)) for _ in range(3)]
 
-print(cube_1, cube_2, cube_3)
-print(f"""sum numbers :{sum(map(int, [cube_1, cube_2, cube_3]))}
-square number : {int(cube_1 + cube_2 + cube_3) ** 2}""")
+print(list_cube)
+print(f"""sum numbers :{sum(map(int, list_cube))}
+square number : {int("".join(list_cube)) ** 2}""")
