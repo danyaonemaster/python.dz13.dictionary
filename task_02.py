@@ -1,20 +1,17 @@
-def letters(line, dict):
-    if line.__contains__('?'):
-        len_input = len(line.replace("?", ""))
-        print(f"str len : {len_input}\n"
-              f"len even : {dict.get(len_input % 2 + 1)}")
-    else:
-        print("? missing from line")
+def linter(line, in_dict):
+    if not line.__contains__('?'):
+        print("The question mark is missing in the line")
+        return
+
+    len_input = len(line.replace("?", ""))
+    print(in_dict.get(len_input % 2 + 1))
 
 
 dictionary = {1: "Yes", 2: "No"}
-should_process = True
+while True:
+    user_input = input("Enter a question sentence: ")
+    linter(user_input, dictionary)
+    if input("Try again? [y/n] : ") == "n":
+        break
 
-while should_process:
-    user_input = input("Enter a number: ")
-
-    letters(user_input, dictionary)
-
-    should_process = input("Exit [y/n] : ") == "n"
-else:
-    print('finish')
+print('finish')
